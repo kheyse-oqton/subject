@@ -45,7 +45,7 @@ export class Subject<T> implements ISubject<T>
     this._subs = [];
   }
 
-  [Symbol.asyncIterator](): AsyncIterator<T> {
+  [Symbol.asyncIterator](): AsyncIterator<T, void, void> {
     return this._addSubscription()[Symbol.asyncIterator]();
   }
 
